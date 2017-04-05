@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WubWub the Elf</title>
+
+    <link rel="stylesheet" href="falling.css">
+  </head>
+  <body>
+    <h3> HELP WUBWUB CATCH SANTA'S PRESENTS! </h3>
+<h1>Score:<p id = "score"></p>Streak:<p id = "streakCount"></p></h1>
+    <!-- This starter code only contains the area in which the game graphics get drawn.
+         Feel free to add more elements for displays like scores, lives left, player
+         statistics, instructions, etc. -->
+    <canvas id="game" width="1024" height="536">
+      Sorry, but you need a web browser that supports the
+      <code>canvas</code> element.
+    </canvas>
+    <audio loop src = "mix.mp3" autoplay>
+    </audio>
+    <p>
+      <button id="start-button">Start</button>
+      <button id="stop-button">Stop</button>
+      <h3>Lives Remaining: <p id = "lives"></p></h3>
+    </p>
+    <script src="falling.js"></script>
+  </body>
+</html>
