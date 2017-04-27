@@ -20,3 +20,12 @@ This file includes the HTML code for the Falling game.
 
 ## Falling.css
 This file includes the CSS code for the Falling game.
+
+## Coin.java
+This file includes code that creates the Coin object implimented in the BagOfCoins and AlexanderHamilton classes. The entirety of this code is credited to Professor John David Dionisio who provided our CMSI186 class with this starter code.
+
+## BagOfCoins.java
+The BagOfCoins class creates an object that represents a "bag of coins," or a group of Coin objects in which every coin in the bag can be flipped. It includes the central method that allows AlexanderHamilton to function-- the getFlipHistogram method.
+
+## AlexanderHamilton.java
+AlexanderHamilton (named after the first treasury secretary of the United States) utilizes the Coin and BagOfCoins classes. It is a program that prints a histogram that shows the number of individual coins that turned up heads out of the total number of throws. The user can input either zero or four arguments. The first argument represents the number of coins in the bag, the second represents the number of times the bag is thrown, the third represents the number of partitions the histogram results are divided into, and the fourth represents the amount of bias on the coins (the bias being a decimal amount that represents the percent chance that a coin will turn up tails). If the user wants to use the default amounts of 1000 coins, 1000 throws, 100 partitions, and a bias of 0.5, they can input a - instead of a value in their input.
