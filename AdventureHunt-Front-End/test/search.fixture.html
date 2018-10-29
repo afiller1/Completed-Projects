@@ -1,0 +1,27 @@
+<!--
+  Compare the fixture to the actual web page. Note how the fixture _distills_ the content to just the essential
+  elements for the app. This is why they are copies. The web page can be laid out or redesigned as much as you like,
+  but as long as the elements remain the same, this fixture will remain valid.
+
+  Of course, if the functionality changes to the point that the controller JavaScript needs to also change, then the
+  fixture would have to be revised.
+-->
+
+<input type="string" class="form-control" id="flightOrigin" placeholder="LAX">
+<button type="button" class="btn btn-light" id="flightSearchButton" disabled>Search Flights</button>
+<div class="container flightresults" id="flightresults">
+</div>
+
+<input type="string" class="form-control" id="carLocation" placeholder="PHX">
+<input type="date" class="form-control" id="carPickupDate">
+<input type="date" class="form-control" id="carDropoffDate">
+<button type="button" class="btn btn-light" id="carSearchButton" disabled>Search Cars</button>
+<div class="container carresults" id="carresults">
+</div>
+
+<input type="string" class="form-control" id="hotelLocation" placeholder="SFO">
+<input type="date" class="form-control" id="checkInDate">
+<input type="date" class="form-control" id="checkOutDate">
+<button type="button" class="btn btn-light" id="hotelSearchButton" disabled>Search Hotels</button>
+<div class="container hotelresults" id="hotelresults">
+</div>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdventureHunt</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="lilPlane.png"/>
+  </head>
+
+  <head>
+<h1 class="title">
+AdventureHunt
+<h1>
+</head>
+
+  <body>
+    <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-flights-tab" data-toggle="pill" href="#pills-flights" role="tab" aria-controls="pills-flights" aria-selected="false">Hunt for Flights</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-cars-tab" data-toggle="pill" href="#pills-cars" role="tab" aria-controls="pills-cars" aria-selected="false">Hunt for Cars</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-hotels-tab" data-toggle="pill" href="#pills-hotels" role="tab" aria-controls="pills-hotels" aria-selected="false">Hunt for Hotels</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="container" id="description">
+          <h3>Welcome, Adventurer!</h3>
+          <h5>We at AdventureHunt recognize the challenges that go into planning a voyage, especially when there are so many patches of the world that we have yet to explore! For this reason, we created AdventureHunt to help you explore the areas you want to explore. Have some time off, but aren’t sure where to go or what to do? AdventureHunt can help you. We provide an explorative approach to trip planning. If you do not have a destination in mind, simply use our Flight Hunt
+             functionality to explore easy, affordable trips leaving from your local airport. Want to take a road trip, but want to save some money? Use the Car Hunt service to find affordable rental cars near you. Have a place in mind, but need a place to stay? Use the Hotel Hunt to explore affordable lodging in the area. If you love to travel and explore the world, but you simply can’t decide which corner to explore next, AdventureHunt is here to help you out. </h5>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-flights" role="tabpanel" aria-labelledby="pills-flights-tab">
+        <div class="col-sm-10 offset-sm-1 text-center">
+          <div class="info-form" id="firstForm">
+            <form>
+              <div class="form-group">
+                <label for="flightOrigin" id="label">Airport of Origin</label>
+                <input type="string" class="form-control" id="flightOrigin" placeholder="LAX">
+              </div>
+            </form>
+            <div class="form-group">
+              <button type="button" class="btn btn-light" id="flightSearchButton" disabled>Search Flights</button>
+            </div>
+          </div>
+          <div id="flightresultlabel">
+            <h3>Results</h3>
+          </div>
+          <div class="container flightresults" id="flightresults">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-cars" role="tabpanel" aria-labelledby="pills-cars-tab">
+        <div class="col-sm-10 offset-sm-1 text-center">
+          <div class="info-form" id="firstForm">
+            <form>
+              <div class="form-group">
+                <label for="originLabel" id="label">Local Airport for Car Pickup</label>
+                <input type="string" class="form-control" id="carLocation" placeholder="PHX">
+              </div>
+              <div class="form-group">
+                <label for="dateLabel" id="label">Pickup Date</label>
+                <input type="date" class="form-control" id="carPickupDate">
+              </div>
+              <div class="form-group">
+                <label for="dateLabel" id="label">Drop-Off Date</label>
+                <input type="date" class="form-control" id="carDropoffDate">
+              </div>
+            </form>
+            <div class="form-group">
+              <button type="button" class="btn btn-light" id="carSearchButton" disabled>Search Cars</button>
+            </div>
+          </div>
+          <div id="carresultlabel">
+            <h3>Results</h3>
+          </div>
+          <div class="container carresults" id="carresults">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-hotels" role="tabpanel" aria-labelledby="pills-hotels-tab">
+        <div class="col-sm-10 offset-sm-1 text-center">
+          <div class="info-form" id="firstForm">
+            <form>
+              <div class="form-group">
+                <label for="locationLabel" id="label">Nearby Airport</label>
+                <input type="string" class="form-control" id="hotelLocation" placeholder="SFO">
+              </div>
+              <div class="form-group">
+                <label for="dateLabel" id="label">Check-In Date</label>
+                <input type="date" class="form-control" id="checkInDate">
+              </div>
+              <div class="form-group">
+                <label for="dateLabel" id="label">Check-Out Date</label>
+                <input type="date" class="form-control" id="checkOutDate">
+              </div>
+            </form>
+            <button type="button" class="btn btn-light" id="hotelSearchButton" disabled>Search Hotels</button>
+          </div>
+        </div>
+        <div id="hotelresultlabel">
+          <h3>Results</h3>
+        </div>
+        <div class="container hotelresults" id="hotelresults">
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+
+    <script src="AdventureHunt.js"></script>
+    <script src="api.js"></script>
+    <script>window.AdventureHuntSearchController.init()</script>
+
+  </body>
+</html>
