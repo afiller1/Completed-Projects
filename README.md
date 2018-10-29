@@ -3,6 +3,9 @@
 # My Completed Projects Repository
 Hello, and welcome to my repository!
 
+## AdventureHunt-Front-End
+This folder contains all of the files necessary to run a front end that I designed. It utilizes the Amadeus Travel Search API to provide users with an exploratory travel search experience. The user can explore flights, cars, and hotels listed by price. At the moment, the project is not connected to the "real" API (that will be the next step of the project). Instead, it only displays the data in the api.js file -- my "fake" API.
+
 ## Autocompleter.java
 This program utilizes ternary search trees and allows a user to apply numerous methods to a stored list of words, including recieving an "autocompleted" word based on some prefix that a user might enter (for instance, if the user inputs "c" and asks for an autocomplete, they might get back "cat" if it is stored within the autocompleter). This code demonstrates my expertise with the tree data structure (I got 100% on this project!)
 
