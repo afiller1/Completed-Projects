@@ -1,5 +1,7 @@
 (() => {
-  // This key is secret...shhh!
+  // Note: this API is no longer a functioning service...
+  // So this file doesn't really connect the project to anything.
+  // But it worked great back when the API was running!
   const API_KEY = 'OE9AWl9JeQd477skIPd3GYhAPAaAL9kw'
   const baseURL = 'https://api.sandbox.amadeus.com/v1.2/'
   const flightURL = 'flights/inspiration-search?'
