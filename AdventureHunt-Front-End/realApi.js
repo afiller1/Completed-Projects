@@ -1,12 +1,10 @@
-// This is a pre-ES6 module “module.” Really it is a global object that is initialized privately.
-// At this writing, web browsers _do_ support modules natively, but for now it remains beneficial
-// to be aware of this older mechanism.
 (() => {
-  let api = 'https://misconfigured-app.com/'
-  const API_KEY = 'dc6zaTOxFJmzC' // Giphy's public beta key (thank you Giphy).
-
-  const apiHost = host => { api = host }
-  const urlFor = resource => `${api}${resource}`
+  // This key is secret...shhh!
+  const API_KEY = 'OE9AWl9JeQd477skIPd3GYhAPAaAL9kw'
+  const baseURL = 'https://api.sandbox.amadeus.com/v1.2/'
+  const flightURL = 'flights/inspiration-search?'
+  const carURL = 'cars/search-airport?'
+  const hotelURL = 'hotels/search-airport?'
 
   const HTTP_OK = 200
 
@@ -30,41 +28,33 @@
 
   const okCheck = statusCheck([HTTP_OK])
 
-  const headers = {
-    'Content-Type': 'application/json'
+  const searchFlights = params => {
+    const origin = params.origin
+    return fetch(`${baseURL}${flightURL}apikey=${API_KEY}&origin=${origin}`)
+      .then(okCheck, emitNativeError)
+      .then(response => response.json())
   }
 
-  const paramsWithApiKey = params => {
-    const result = new URLSearchParams(params)
-    result.set('api_key', API_KEY)
-    return result
+  const searchCars = params => {
+    const location = params.location
+    const pickup = params.pickup
+    const dropoff = params.dropoff
+    return fetch(`${baseURL}${carURL}apikey=${API_KEY}&location=${location}&pick_up=${pickup}&drop_off=${dropoff}`)
+      .then(response => response.json())
   }
 
-  // The fetch function initiates a connection to the web service.
-  // fetch returns a _promise_: an object that represents a future result.
-  // Thus, the function actually returns right away. However, when the
-  // anticipated result does show up, the code specifies what to do using
-  // either `then` or `catch`. Both functions accept another function,
-  // to be called upon a successful or failed promise, respectively.
-  // Furthermore, then `then` function can be chained: its return result
-  // is passed to the next `then` function as an argument. Here, the initial
-  // handler converts the raw result into JSON. That JSON then goes to the
-  // next handler, which does the actual work of putting the result on the
-  // web page.
-  //
-  // The design of fetch allows this entire sequence to be rendered in a
-  // _single statement_, thus obviating the need for curly braces but
-  // resulting in what many will view to be a decrease in readability
-  // (for those who aren’t used to functional-style programming). YMMV
-  const query = (resource, params) => fetch(`${urlFor(resource)}?${paramsWithApiKey(params)}`, {
-    headers
-  }).then(okCheck, emitNativeError)
-    .then(response => response.json())
-
-  const searchGifs = params => query('gifs/search', params)
+  const searchHotels = params => {
+    const location = params.location
+    const checkIn = params.checkIn
+    const checkOut = params.checkOut
+    return fetch(`${baseURL}${hotelURL}apikey=${API_KEY}&location=${location}&check_in=${checkIn}&check_out=${checkOut}`)
+      .then(response => response.json())
+  }
 
   window.ApiService = {
-    apiHost,
-    searchGifs
+    apiHost: () => {},
+    searchFlights,
+    searchCars,
+    searchHotels
   }
 })()
