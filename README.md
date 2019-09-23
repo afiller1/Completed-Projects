@@ -14,3 +14,6 @@ This file includes the code wherein the central gameplay functionality is stored
 
 ## LinkedYarn.java
 This code creates a linked list of Yarn objects. Now, a Yarn is an unordered collection of Strings in which duplicates are allowed. A Yarn maps Strings to the number of occurrences of each String in the Yarn. For instance, the sentence "I think I like quesadillas" could be converted to the yarn { "I": 2 , "think": 1 , "like" : 1, "quesadillas" : 1 }. The size of a Yarn is the number of total words stored in it (in this case, 5), while the uniqueSize is the number of unique words in the Yarn (in this case, 4). In this program, each Yarn is represented as a linked list in which each Node of the list contains a String (the word) as well as the number of occurrences of that String. As you will see, many different methods are created and can be used in this program. This work demonstrates my developing expertise in Java programming, as well as my flourishing understanding of Data Structures (this was one of the first projects I completed in my Data Structures class).
+
+## rotating_scene.cpp
+This file contains the C++ necessary to create and rotate a 3D graphical scene. This project was completed in the second semester of my Junior year of college in my Computer Graphics class, which dealt heavily with the mathematical theory behind computer graphics.
