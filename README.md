@@ -15,7 +15,7 @@ This file contains a link to the GitHub repository containing all of the work fr
 ## GamePlay.cs
 This file includes the code wherein the central gameplay functionality is stored for a game I designed in Unity called Scopa. Scopa itself is an Italian card game that relies heavily on both logic and luck (rules can be found at https://en.wikipedia.org/wiki/Scopa !). While several other classes were utilized in the final game, this class holds the central logic and functionality code for the game overall. Be warned -- the class for which this was the final project was graded entirely on code functionality, so the cleanliness of the code was not necessarily of high priority. Also, let it be known that I was the only Sophomore among the 15 or so students in this upper-division class, and I received an A for my work! :)
 
-## GRNsight
+## GRNsight.md
 GRNsight is the gene regulatory network-visualizing research project that I am working on with a couple of professors (Dr. Kam Dahlquist from LMU Biology and Dr. John Dionisio from LMU Computer Science). I work with these professors to complete weekly tasks. As of now, I have mainly worked on setting up a new testing framework for validating input workbooks, and I have written tests and created test workbooks to check this framework's functionality in terms of the expression data sheets used in node coloring. See the general project website [here](http://dondi.github.io/GRNsight). The GRNsight file contains a link to the project repository.
 
 ## LinkedYarn.java
